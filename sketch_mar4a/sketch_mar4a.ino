@@ -1,25 +1,26 @@
-#define FORCE_PIN A0 A1 A2 A3
+#define FSR_0 A0
+#define FSR_1 A1
+#define FSR_2 A2
+#define FSR_3 A3
 
 void setup() {
-// put yoursetup code here, to run once:
-Serial.begin(9600);
+  Serial.begin(9600);
 }
+
 void loop() {
-// put your main code here, to run repeatedly:
-int analogReading = analogRead(FORCE_PIN);
 
+  int fsr0 = analogRead(FSR_0);
+  int fsr1 = analogRead(FSR_1);
+  int fsr2 = analogRead(FSR_2);
+  int fsr3 = analogRead(FSR_3);
 
-Serial.print("Force reading = ");
-Serial.print(analogReading) ;
+  Serial.print(fsr0);
+  Serial.print(",");
+  Serial.print(fsr1);
+  Serial.print(",");
+  Serial.print(fsr2);
+  Serial.print(",");
+  Serial.println(fsr3);
 
-if (analogReading < 10) // from 0 to 9
-  Serial.println(" -> no pressure");
-else if (analogReading < 200) // from 10 to 199
-  Serial.println(" -> light touch");
-else if (analogReading < 500) // from 200 to 499
-  Serial.println(" -> light squeeze");
-else if (analogReading < 800)//l from 500 to 799
-  Serial.println(" -> medium squeeze");
-else // from 800 to 1023
-  Serial.println(" -> big squeeze");
+  delay(150); // 稍微稳定数据
 }
