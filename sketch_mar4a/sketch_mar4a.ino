@@ -18,23 +18,12 @@ void loop() {
   int fsr4 = analogRead(FSR_4);
   int fsr5 = analogRead(FSR_5);
 
-  Serial.print("01");
-  Serial.print(fsr0);
+  Serial.print(fsr0); Serial.print(",");
+  Serial.print(fsr1); Serial.print(",");
+  Serial.print(fsr2); Serial.print(",");
+  Serial.print(fsr3); Serial.print(",");
+  Serial.print(fsr4); Serial.print(",");
+  Serial.println(fsr5);   // 只有最后一个 println
 
-  Serial.print("02");
-  Serial.print(fsr1);
-
-  Serial.print("03");
-  Serial.print(fsr2);
-
-  Serial.print("04");
-  Serial.print(fsr3);
-
-  Serial.print("05");
-  Serial.println(fsr4);
-
-  Serial.print("06");
-  Serial.println(fsr5);
-
-  delay(800); 
+  delay(400);
 }
