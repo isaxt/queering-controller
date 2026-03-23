@@ -3,6 +3,7 @@
 #define FSR_2 A2
 #define FSR_3 A3
 #define FSR_4 A4
+#define FSR_5 A5
 
 void setup() {
   Serial.begin(9600);
@@ -15,20 +16,25 @@ void loop() {
   int fsr2 = analogRead(FSR_2);
   int fsr3 = analogRead(FSR_3);
   int fsr4 = analogRead(FSR_4);
+  int fsr5 = analogRead(FSR_5);
 
+  Serial.print("01");
   Serial.print(fsr0);
-  Serial.print(",");
 
+  Serial.print("02");
   Serial.print(fsr1);
-  Serial.print(",");
 
+  Serial.print("03");
   Serial.print(fsr2);
-  Serial.print(",");
 
+  Serial.print("04");
   Serial.print(fsr3);
-  Serial.print(",");
 
+  Serial.print("05");
   Serial.println(fsr4);
 
-  delay(80); 
+  Serial.print("06");
+  Serial.println(fsr5);
+
+  delay(800); 
 }
